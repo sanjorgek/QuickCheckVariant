@@ -1,7 +1,23 @@
 {-# OPTIONS_GHC -fno-warn-tabs #-}
+{-|
+Module      : Test.QuickCheck.Variant
+Description : Varaint class
+Copyright   : (c) Jorge Santiago Alvarez Cuadros, 2015
+License     : GPL-3
+Maintainer  : sanjorgek@ciencias.unam.mx
+Stability   : experimental
+Portability : portable
+
+To get random "invalid" and "valid" data
+-}
 module Test.QuickCheck.Variant where
 import Test.QuickCheck
 
+{-|
+You can define
+
+>>> instance (Varaint a) => Arbitrary a where {arbitrary = oneof [valid, invalid]}
+-}
 class Variant a where
   valid   :: Gen a
   invalid :: Gen a
