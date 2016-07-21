@@ -4,7 +4,7 @@ name:                QuickCheckVariant
 --                   | | | +--- code changes with no API change
 version:             0.1.0.0
 synopsis:            Generator of "valid" and "invalid" data in a type class
--- description:         
+description:         Generator of "valid" and "invalid" data in a type class
 homepage:            https://github.com/sanjorgek/QuickCheckVariant
 license:             GPL-3
 license-file:        LICENSE
