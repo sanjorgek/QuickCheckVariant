@@ -109,3 +109,26 @@ instance (Variant a, Variant b, Variant c) => Variant ((,,) a b c) where
     y <- valid
     z <- valid    
     return (x, y, z)
+
+{-|
+The class of things wich can be tested with invalid or valid input.
+-}
+class VarTesteable prop where
+  -- |Property for valid input
+  propertyValid::prop -> Property
+  -- |Property for invalid input  
+  propertyInvalid::prop -> Property
+
+{-|
+Same as Testeable
+-}
+instance VarTesteable Bool where
+  propertyValid = property
+  propertyInvalid = property
+
+{-|
+Instead of variant we use valid or invalid generators
+-}
+instance (Arbitrary a, Variant a, Show a, Testable prop) => VarTesteable (a->prop) where
+  propertyValid = forAllShrink valid shrink
+  propertyInvalid = forAllShrink invalid shrink
