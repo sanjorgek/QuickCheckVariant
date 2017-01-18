@@ -1,0 +1,51 @@
+name:               "QuickCheckVariant"
+description:        "Generator of 'valid' and 'invalid' data in a type class"
+
+url:                "http://sanjorgek.com/QuickCheckVariant/"
+author:             "sanjorgek"
+email:              "sanjorgek@ciencias.unam.mx"
+gravatar_hash:      "9d83bc817c91cae26bc83247f470bc9c"
+twitter:            "sanjorgek"
+email:              "sanjorgek@ciencias.unam.mx"
+github:             "sanjorgek"
+pinterest:          "sanjorgek"
+linkedin:           "sanjorgek"
+facebook:           "sanjorgek"
+
+disqus_shortname:   "sanjorgek"
+
+background:         "https://d13yacurqjgara.cloudfront.net/users/463836/screenshots/1876492/attachments/344598/Mountain_1242x2208_IOS6_png.png"
+
+paginate:           5
+paginate_path:      "/page:num/"
+
+baseurl:            ""
+permalink:          :year/:month/:day/:title/
+
+markdown:           kramdown
+
+nav:
+  - name:           "Docs"
+    href:           "https://hackage.haskell.org/package/QuickCheckVariant"
+  - name:           "Download"
+    href:           "https://github.com/sanjorgek/QuickCheckVariant/archive/master.zip"
+
+sass:
+  style:            :compressed
+
+defaults:
+  -
+    scope:
+      path:         ""
+      type:         "pages"
+    values:
+      layout:       "page"
+  -
+    scope:
+      path:         ""
+      type:         "posts"
+    values:
+      layout:       "post"
+
+gems:
+  - jekyll-paginate
