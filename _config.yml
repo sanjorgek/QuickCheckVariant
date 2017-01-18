@@ -29,6 +29,8 @@ nav:
     href:           "https://hackage.haskell.org/package/QuickCheckVariant"
   - name:           "Download"
     href:           "https://github.com/sanjorgek/QuickCheckVariant/archive/master.zip"
+  - name:           "Examples"
+    href:           "http://sanjorgek.com/QuickCheckVariant/examples"
 
 sass:
   style:            :compressed
