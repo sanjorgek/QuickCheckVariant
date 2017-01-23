@@ -1,4 +1,7 @@
-name:               "QuickCheckVariant"
+name:               "QuickCheck
+
+Variant"
+
 description:        "Generator of 'valid' and 'invalid' data in a type class"
 
 url:                "http://sanjorgek.com/QuickCheckVariant/"
@@ -29,8 +32,6 @@ nav:
     href:           "https://hackage.haskell.org/package/QuickCheckVariant"
   - name:           "Download"
     href:           "https://github.com/sanjorgek/QuickCheckVariant/archive/master.zip"
-  - name:           "Examples"
-    href:           "http://sanjorgek.com/QuickCheckVariant/examples"
 
 sass:
   style:            :compressed
