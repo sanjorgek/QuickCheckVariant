@@ -11,7 +11,7 @@ Portability : portable
 To get random "invalid" and "valid" data
 -}
 module Test.QuickCheck.Variant where
-import Test.QuickCheck
+import           Test.QuickCheck
 
 {-|
 You can define
@@ -25,98 +25,12 @@ class Variant a where
   invalid :: Gen a
 
 {-|
-Variant of a list.
-
-A valid list only had valid data.
-
-A invalid list had only invalid data or some valid data with invalid data.
--}
-instance (Variant a) => Variant [a] where
-  valid = do
-    x <- valid
-    xs <- valid
-    (oneof . map return) [[], [x], x:xs]
-  invalid = do
-    x <- invalid
-    xs <- invalid
-    y <- valid
-    ys <- valid
-    (oneof . map return) [[x], x:xs, x:ys, y:xs]
-
-{-|
-Variant Maybe
-
-Only Just data can be invalid, nothing always is valid.
--}
-instance (Variant a) => Variant (Maybe a) where
-  invalid = do
-    x <- invalid
-    return (Just x)
-  valid = do
-    x <- valid
-    (oneof . map return) [Nothing, Just x]
-
-{-|
-Varaint Either.
--}
-instance (Variant a, Variant b) => Variant (Either a b) where
-  invalid = do
-    x <- invalid
-    y <- invalid
-    (oneof . map return) [Left x, Right y]
-  valid = do
-    x <- valid
-    y <- valid
-    (oneof . map return) [Left x, Right y]
-
-{-|
-Varaint tuple
-
-Invalid tuple may had some valid data with invalid data or only invalid data.
-
-Valid tuple had only valid data.
--}
-instance (Variant a, Variant b) => Variant ((,) a b) where
-  invalid = do
-    x <- invalid
-    y <- invalid
-    z <- valid
-    w <- valid
-    (oneof . map return) [(x,y), (x,z), (w,y)]
-  valid = do
-    x <- valid
-    y <- valid
-    return (x, y)
-
-{-|
-Varaint 3-tuple
-
-Invalid 3-tuple may had some valid data with invalid data or only invalid data.
-
-Valid 3-tuple had only valid data.
--}
-instance (Variant a, Variant b, Variant c) => Variant ((,,) a b c) where
-  invalid = do
-    x <- invalid
-    y <- invalid
-    z <- invalid
-    w <- valid
-    v <- valid
-    u <- valid 
-    (oneof . map return) [(x,y,z), (x,y,u), (x,v,z), (w,y,z), (w,v,z), (x,v,u), (w,y,u)]
-  valid = do
-    x <- valid
-    y <- valid
-    z <- valid    
-    return (x, y, z)
-
-{-|
 The class of things wich can be tested with invalid or valid input.
 -}
 class VarTesteable prop where
   -- |Property for valid input
   propertyValid::prop -> Property
-  -- |Property for invalid input  
+  -- |Property for invalid input
   propertyInvalid::prop -> Property
 
 {-|
