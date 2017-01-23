@@ -1,11 +1,12 @@
 ---
 title:        "Person"
-description:  "A data definition"
+description:  "A data instance"
 image:        "http://placehold.it/400x200"
 author:       "SanJorgeK"
 ---
 
 Person
+======
 
 ```haskell
 data Person = Anonymous { getId::String } | Client { getUsername::String, getName::String, getEmail::String} deriving(Show,Eq)
