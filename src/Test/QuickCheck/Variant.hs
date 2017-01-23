@@ -11,7 +11,7 @@ Portability : portable
 To get random "invalid" and "valid" data
 -}
 module Test.QuickCheck.Variant where
-import Test.QuickCheck
+import           Test.QuickCheck
 
 {-|
 You can define
@@ -49,12 +49,10 @@ Variant Maybe
 Only Just data can be invalid, nothing always is valid.
 -}
 instance (Variant a) => Variant (Maybe a) where
-  invalid = do
-    x <- invalid
-    return (Just x)
+  invalid = return Nothing
   valid = do
     x <- valid
-    (oneof . map return) [Nothing, Just x]
+    return (Just x)
 
 {-|
 Varaint Either.
@@ -102,12 +100,12 @@ instance (Variant a, Variant b, Variant c) => Variant ((,,) a b c) where
     z <- invalid
     w <- valid
     v <- valid
-    u <- valid 
+    u <- valid
     (oneof . map return) [(x,y,z), (x,y,u), (x,v,z), (w,y,z), (w,v,z), (x,v,u), (w,y,u)]
   valid = do
     x <- valid
     y <- valid
-    z <- valid    
+    z <- valid
     return (x, y, z)
 
 {-|
@@ -116,7 +114,7 @@ The class of things wich can be tested with invalid or valid input.
 class VarTesteable prop where
   -- |Property for valid input
   propertyValid::prop -> Property
-  -- |Property for invalid input  
+  -- |Property for invalid input
   propertyInvalid::prop -> Property
 
 {-|
