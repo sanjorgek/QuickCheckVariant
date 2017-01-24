@@ -15,7 +15,7 @@ layout: default
     <h2>No post found</h2> {% else %} {% for post in paginator.posts %}
     <div class="post-list">
         <h2 class="post-title">
-      <a href="{{ site.url }}/{{ post.url }}">{{ post.title }}</a>
+      <a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
     </h2> {% if post.description %}
         <p>{{ post.description }}</p>
         {% endif %}
@@ -26,10 +26,10 @@ layout: default
     {% endfor %} {% if paginator.total_pages > 1 %}
     <div class="pages">
       {% if paginator.previous_page %}
-        <a href="{{ site.url }}{{ paginator.previous_page_path | prepend: site.baseurl }}"><</a>
+        <a href="{{ site.url }}{{ paginator.previous_page_path }}"><</a>
       {% endif %}
       {% if paginator.next_page %}
-        <a href="{{ site.url }}{{ paginator.next_page_path | prepend: site.baseurl }}">></a>
+        <a href="{{ site.url }}{{ paginator.next_page_path }}">></a>
       {% endif %}
     </div>
     {% endif %}
