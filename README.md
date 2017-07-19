@@ -2,6 +2,8 @@
 
 Generator of "valid" and "invalid" data in a type class
 
+[![QuickCheckVariant](https://img.shields.io/badge/QuickCheckVariant-v0.2.0.0-blue.svg?style=plastic)](https://hackage.haskell.org/package/QuickCheckVariant)
+
 For example, if you created
 
 ```haskell
@@ -27,3 +29,15 @@ instance Variant Person where
 ``` 
 
 See [this post](https://wiki.haskell.org/QuickCheck_as_a_test_set_generator) for more details
+
+## More badges
+
+[![QuickCheckVariant](https://img.shields.io/badge/winter-is%20here-blue.svg)](http://sanjorgek.com/QuickCheckVariant/)
+
+[![forthebadge](http://forthebadge.com/images/badges/uses-badges.svg)](http://sanjorgek.com/QuickCheckVariant/)
+
+[![forthebadge](http://forthebadge.com/images/badges/check-it-out.svg)](http://sanjorgek.com/QuickCheckVariant/)
+
+[![forthebadge](http://forthebadge.com/images/badges/compatibility-betamax.svg)](http://sanjorgek.com/QuickCheckVariant/)
+
+[![forthebadge](http://forthebadge.com/images/badges/you-didnt-ask-for-this.svg)](http://sanjorgek.com/QuickCheckVariant/)
