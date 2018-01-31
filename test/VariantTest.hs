@@ -44,5 +44,4 @@ tupleProp = describe "Naturals" $ do
 
 main::IO ()
 main = hspec $
-  describe "Test test" $ do
-    tupleProp
+  describe "Test test" tupleProp
