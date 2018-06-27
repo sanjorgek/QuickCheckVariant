@@ -2,7 +2,10 @@
 
 Generator of "valid" and "invalid" data in a type class
 
-[![QuickCheckVariant](https://img.shields.io/badge/QuickCheckVariant-v0.2.0.0-blue.svg?style=plastic)](https://hackage.haskell.org/package/QuickCheckVariant)
+[![QuickCheckVariant](https://img.shields.io/badge/QuickCheckVariant-v1.0.0.1-blue.svg?style=plastic)](https://hackage.haskell.org/package/QuickCheckVariant)
+[![pipeline status](https://gitlab.com/sanjorgek/QuickCheckVariant/badges/master/pipeline.svg)](https://gitlab.com/sanjorgek/QuickCheckVariant/commits/master)
+[![Build Status](https://travis-ci.org/sanjorgek/QuickCheckVariant.svg?branch=master)](https://travis-ci.org/sanjorgek/QuickCheckVariant)
+[![CircleCI](https://circleci.com/gh/sanjorgek/QuickCheckVariant.svg?style=svg)](https://circleci.com/gh/sanjorgek/QuickCheckVariant)
 
 For example, if you created
 
@@ -26,7 +29,7 @@ instance Variant Person where
     name <- alternative
     return $ Client username name ""
 
-``` 
+```
 
 See [this post](https://wiki.haskell.org/QuickCheck_as_a_test_set_generator) for more details
 
