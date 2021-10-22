@@ -2,7 +2,7 @@ name:                QuickCheckVariant
 -- PVP summary:      +-+------- breaking API changes
 --                   | | +----- non-breaking API additions
 --                   | | | +--- code changes with no API change
-version:             1.0.1.0
+version:             1.0.1.1
 synopsis:            Valid and Invalid generator
 description:         "Valid" and "Invalid" data generator with a type class
 homepage:            https://github.com/sanjorgek/QuickCheckVariant
